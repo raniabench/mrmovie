@@ -1,0 +1,33 @@
+<div class="container">
+	<!--les tirets-->
+	<input type="radio" id="i1" name="images" checked />
+	<input type="radio" id="i2" name="images" />
+	<input type="radio" id="i3" name="images" />
+	<input type="radio" id="i4" name="images"  />
+	<!--les films-->
+	<div *ngFor="let c of data; let i = index" class="slide_img" id="e{{i}}">
+		<!--poster du film-->			
+		<img src="https://image.tmdb.org/t/p/original/{{c.backdrop_path}}" >
+		<label class="prev" for="i{{(i-1)%5}}"><span></span></label>
+		<label class="next" for="i{{(i+1)%5}}"><span></span></label>	
+		<!--les infos du film-->
+		<h3 id="titre">{{c.title}}</h3>
+		<h6 id="dateSortie">Coming out {{c.release_date}}</h6>
+		<!--plus de description-->
+		<a href="#">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			More
+		</a>
+	</div>
+	
+	<div id="nav_slide">
+		<label for="i1" class="dots" id="dot1"></label>
+		<label for="i2" class="dots" id="dot2"></label>
+		<label for="i3" class="dots" id="dot3"></label>
+		<label for="i4" class="dots" id="dot4"></label>
+	</div>
+		
+</div>

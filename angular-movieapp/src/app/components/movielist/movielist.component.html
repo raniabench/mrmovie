@@ -1,0 +1,46 @@
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<!--Titre de la liste des films-->
+<div class ="watchlist">
+  <h1 class="neon" data-text="Watch List">[ Watch List ]</h1>
+</div>
+<!--les cartes/posters des films-->
+<div class="cards">
+  <div *ngFor="let c of data" class="card middle">
+    <!--image du poster du film-->
+    <div class="front">
+      <img id ="image" src="https://image.tmdb.org/t/p/original/{{c.poster_path}}">
+    </div>
+    <!--les infos du films-->
+    <div class="back">
+      <div class="back-content ">
+          <h2 id="titre">{{c.title}} <br> 
+            <span id="dateSortie">Released: {{c.release_date}}</span><br>
+            <span>Language: <span id="langue">{{c.original_language}}</span></span>
+          </h2>
+          <div id="etoile" class="rating">
+              <app-eval *ngIf="c.vote_average >= 1"></app-eval>
+              <app-eval *ngIf="c.vote_average >= 2"></app-eval>
+              <app-eval *ngIf="c.vote_average >= 3"></app-eval>
+              <app-eval *ngIf="c.vote_average >= 4"></app-eval>
+              <app-eval *ngIf="c.vote_average >= 5"></app-eval>
+              <app-eval *ngIf="c.vote_average >= 6"></app-eval>
+              <app-eval *ngIf="c.vote_average >= 7"></app-eval>
+              <app-eval *ngIf="c.vote_average >= 8"></app-eval>
+              <app-eval *ngIf="c.vote_average >= 9"></app-eval>
+              <span id="vote">{{c.vote_average}}</span>
+          </div>
+          <!--Vers la description du film-->
+          <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            More
+          </a>
+      </div>
+    </div>
+  </div>
+</div>
